@@ -83,11 +83,11 @@ class Unet(nn.Module):
             x = self.up[idx+1](concat_skip)
             
         return self.final_conv(x)
-    
+'''    
 def test():
     x = torch.randn((3, 1, 203, 107))
     model = Unet(in_channels=1, out_channels=1)
     preds = model(x)
     print(preds.shape)
     
-test()
+test()'''
