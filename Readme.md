@@ -17,3 +17,9 @@ I will run all those experiments with this setup.
 ![U-NET](u-net-architecture.png)
 
 - Image credit to [Ronneberger, O., Fischer, P. and Brox, T., 2015, October. U-net: Convolutional networks for biomedical image segmentation. In International Conference on Medical image computing and computer-assisted intervention (pp. 234-241). Springer, Cham.]
+
+
+# Others
+- Helped me a lot by the problem: committed the state_dict which is over 100MiB large and cannot push my repo, and then also cannot delete it from the git objects
+- Solution: git reset HEAD~5 (5 is from my example, check it by using git status and it returns -> Your branch is ahead of 'origin/main' by 5 commits.)
+- Then ignore those large files and add-commit-push!
