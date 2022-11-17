@@ -1,5 +1,6 @@
 import torch
 
+# smooth is for avoiding 0/0
 SMOOTH = 1e-6
 
 def iou_pytorch(preds, labels):
