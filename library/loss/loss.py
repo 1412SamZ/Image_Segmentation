@@ -6,6 +6,8 @@ import torch.nn as nn
 ALPHA = 0.8
 GAMMA = 2
 
+
+# Focalloss by Kaiming -> mitigate data imbalance
 class FocalLoss(nn.Module):
     def __init__(self, weight=None, size_average=True):
         super(FocalLoss, self).__init__()

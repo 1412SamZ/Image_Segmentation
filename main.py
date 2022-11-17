@@ -1,13 +1,14 @@
-
-
-
 import torch
 import torch.nn as nn
 import numpy as np
 from library.utils.iou import *
 from library.utils.utils import *
 from config.config import config
-
+import torch.optim as optim
+from torchvision import datasets, transforms
+from library.models.unet import *
+from library.loss.loss import FocalLoss
+from library.dataset.cv_dataset import *
 CONFIG = config()
 
 def Validate(model, validloader, criterion, valid_loss_min, device, model_path):
@@ -55,17 +56,7 @@ def Test_eval(model, testloader, criterion, model_save_pth, device):
       pred = mask_to_rgb(np.array(preds), CONFIG.id2code)
       print(f"Test loss is: {test_loss:.4f}")
       return np.array(imgs), np.array(masks), np.array(pred)
-  
-import torch
-import torch.optim as optim
-from torchvision import datasets, transforms
-from library.models.unet import *
-from library.loss.loss import FocalLoss
-from config import config
-from library.utils.utils import *
-from library.dataset.cv_dataset import *
-from library.utils.iou import *
-#from library.eval import *
+
 
 CONFIG = config()
 
